@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+	initChatbot();
 	// ========== LOADER ==========
 	setTimeout(function () {
 		$('#loader').addClass('fade-out');
@@ -487,15 +488,15 @@ const EMAIL_CONFIG = {
 	EMAILJS_SERVICE_ID: 'YOUR_SERVICE_ID',      // Replace with your EmailJS Service ID
 	EMAILJS_TEMPLATE_ID: 'YOUR_TEMPLATE_ID',    // Replace with your EmailJS Template ID
 	EMAILJS_PUBLIC_KEY: 'YOUR_PUBLIC_KEY',      // Replace with your EmailJS Public Key
-	
+
 	// === METHOD 2: GMAIL SMTP CONFIGURATION ===
 	// Use Gmail App Password (NOT your regular Gmail password)
-	GMAIL_ADDRESS: 'YOUR_GMAIL@gmail.com',       // Replace with your Gmail address
-	GMAIL_APP_PASSWORD: 'YOUR_APP_PASSWORD',     // Replace with 16-char App Password (no spaces)
-	
+	GMAIL_ADDRESS: 'kingii6635@gmail.com',       // Replace with your Gmail address
+	GMAIL_APP_PASSWORD: 'anuc uccq isnm otrd',     // Replace with 16-char App Password (no spaces)
+
 	// === WHERE TO SEND LEADS ===
 	REPLY_TO_EMAIL: 'admin@freightforce.ai',     // Replace with your email to receive leads
-	
+
 	// === SELECT METHOD ===
 	// 'emailjs' or 'smtp'
 	METHOD: 'smtp'  // Change to 'emailjs' if you prefer EmailJS
@@ -668,104 +669,70 @@ const chatbotState = {
 // CHATBOT INITIALIZATION
 // ============================================
 
+// ============================================
+// CHATBOT INITIALIZATION (UPDATED)
+// ============================================
+
+// ============================================
+// CHATBOT INITIALIZATION - FINAL VERSION
+// ============================================
 function initChatbot() {
-	const toggle = document.getElementById('chatbot-toggle');
-	const close = document.getElementById('chatbot-close');
-	const window_ = document.getElementById('chatbot-window');
-	const form = document.getElementById('leadCaptureForm');
-	const quickForm = document.getElementById('quickContactForm');
-	const miniForm = document.getElementById('miniLeadForm');
-	const heroChatBtn = document.getElementById('chatbot-form');
+    const triggers = document.querySelectorAll('.trigger-chatbot'); 
+    const closeBtn = document.getElementById('chatbot-close');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const toggleIcon = document.getElementById('chatbot-toggle');
 
-	if (!toggle || !window_) return;
+    console.log("Chatbot Initialized. Triggers found:", triggers.length);
 
-	// Setup quick contact form
-	if (quickForm) {
-		quickForm.addEventListener('submit', handleQuickFormSubmit);
-		const quickPhone = document.getElementById('quickPhone');
-		if (quickPhone) {
-			quickPhone.addEventListener('input', function() {
-				this.value = this.value.replace(/\D/g, '').slice(0, 10);
-			});
-		}
-	}
+    if (!chatbotWindow) {
+        console.error("Error: chatbot-window element nahi mila!");
+        return;
+    }
 
-	// Setup mini lead form
-	if (miniForm) {
-		miniForm.addEventListener('submit', handleMiniFormSubmit);
-		const miniPhone = document.getElementById('miniPhone');
-		if (miniPhone) {
-			miniPhone.addEventListener('input', function() {
-				this.value = this.value.replace(/\D/g, '').slice(0, 10);
-			});
-		}
-	}
+    const openChat = () => {
+        console.log("Opening Chat...");
+        chatbotState.isOpen = true;
+        chatbotWindow.style.display = 'flex';
+        setTimeout(() => {
+            chatbotWindow.classList.add('open');
+        }, 10);
+        if (toggleIcon) toggleIcon.classList.add('hidden');
+        if (chatbotState.chatHistory.length === 0) {
+            setTimeout(() => { displayBotMessage(chatFlow.welcome); }, 500);
+        }
+    };
 
-	// Hero section "Chat With Bot" button click handler
-	if (heroChatBtn) {
-		heroChatBtn.addEventListener('click', (e) => {
-			e.preventDefault();
-			// Open chatbot
-			chatbotState.isOpen = true;
-			window_.classList.add('open');
-			toggle.classList.add('hidden');
-			
-			// Start conversation if first time opening
-			if (chatbotState.chatHistory.length === 0) {
-				setTimeout(() => {
-					displayBotMessage(chatFlow.welcome);
-				}, 500);
-			}
-			
-			// Scroll to chatbot window
-			window_.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		});
-	}
+    const closeChat = () => {
+        console.log("Closing Chat...");
+        chatbotState.isOpen = false;
+        chatbotWindow.classList.remove('open');
+        setTimeout(() => {
+            if (!chatbotWindow.classList.contains('open')) {
+                chatbotWindow.style.display = 'none';
+            }
+        }, 300);
+        if (toggleIcon) toggleIcon.classList.remove('hidden');
+    };
 
-	// Toggle chat window
-	toggle.addEventListener('click', () => {
-		chatbotState.isOpen = !chatbotState.isOpen;
-		window_.classList.toggle('open', chatbotState.isOpen);
-		toggle.classList.toggle('hidden', chatbotState.isOpen);
+    // Click Event for Hero + Floating Icon
+    triggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            console.log("Trigger Clicked!");
+            e.preventDefault();
+            e.stopPropagation();
+            openChat();
+        });
+    });
 
-		// Start conversation if first time opening
-		if (chatbotState.isOpen && chatbotState.chatHistory.length === 0) {
-			setTimeout(() => {
-				displayBotMessage(chatFlow.welcome);
-			}, 500);
-		}
-	});
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeChat();
+        });
+    }
 
-	// Close chat window
-	if (close) {
-		close.addEventListener('click', () => {
-			chatbotState.isOpen = false;
-			window_.classList.remove('open');
-			toggle.classList.remove('hidden');
-		});
-	}
-
-	// Handle main form submission
-	if (form) {
-		form.addEventListener('submit', handleFormSubmit);
-	}
-
-	// Setup phone inputs with validation
-	setupPhoneInputs();
-
-	// Close on click outside
-	document.addEventListener('click', (e) => {
-		if (chatbotState.isOpen &&
-			!window_.contains(e.target) &&
-			!toggle.contains(e.target)) {
-			chatbotState.isOpen = false;
-			window_.classList.remove('open');
-			toggle.classList.remove('hidden');
-		}
-	});
-
-	// Auto-open for new visitors after 3 seconds
-	checkAndAutoOpen();
+    setupPhoneInputs();
+    checkAndAutoOpen();
 }
 
 // Check if visitor is new and auto-open chat
@@ -793,7 +760,7 @@ function setupPhoneInputs() {
 	phoneInputs.forEach(id => {
 		const input = document.getElementById(id);
 		if (input) {
-			input.addEventListener('input', function() {
+			input.addEventListener('input', function () {
 				this.value = this.value.replace(/\D/g, '').slice(0, 10);
 			});
 		}
@@ -837,17 +804,17 @@ function skipQuickForm() {
 // Handle quick contact form submission
 function handleQuickFormSubmit(e) {
 	e.preventDefault();
-	
+
 	const name = document.getElementById('quickName').value.trim();
 	const countryCode = document.getElementById('quickCountryCode').value;
 	const phone = document.getElementById('quickPhone').value.trim();
 	const email = document.getElementById('quickEmail').value.trim();
-	
+
 	if (!name || !phone || !email) {
 		alert('Please fill in all fields');
 		return;
 	}
-	
+
 	// Save user details
 	chatbotState.userDetails = {
 		name: name,
@@ -856,28 +823,28 @@ function handleQuickFormSubmit(e) {
 		email: email,
 		timestamp: new Date().toISOString()
 	};
-	
+
 	// Send email
 	const fullPhone = countryCode + phone;
 	const chatHistory = 'New visitor submitted Contact Us form';
-	
+
 	// Show loading
 	const submitBtn = e.target.querySelector('.btn-submit');
 	if (submitBtn) {
 		submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 		submitBtn.disabled = true;
 	}
-	
+
 	// Send and continue
 	if (EMAIL_CONFIG.METHOD === 'smtp') {
 		sendEmailViaSMTP(name, email, fullPhone, chatHistory, 'Contact Us Form');
 	} else {
 		sendEmailViaEmailJS(name, email, fullPhone, chatHistory, 'Contact Us Form');
 	}
-	
+
 	localStorage.setItem('chatbot_visited', 'true');
 	closeQuickForm();
-	
+
 	// Show welcome message
 	setTimeout(() => {
 		displayBotMessage({
@@ -1038,17 +1005,17 @@ function closeMiniForm() {
 
 function handleMiniFormSubmit(e) {
 	e.preventDefault();
-	
+
 	const name = document.getElementById('miniName').value.trim();
 	const countryCode = document.getElementById('miniCountryCode').value;
 	const phone = document.getElementById('miniPhone').value.trim();
 	const email = document.getElementById('miniEmail').value.trim();
-	
+
 	if (!name || !phone || !email) {
 		alert('Please fill in all fields');
 		return;
 	}
-	
+
 	// Save user details
 	chatbotState.userDetails = {
 		name: name,
@@ -1057,11 +1024,11 @@ function handleMiniFormSubmit(e) {
 		email: email
 	};
 	chatbotState.miniFormShown = true;
-	
+
 	// Close form and continue
 	const miniForm = document.getElementById('mini-lead-form');
 	if (miniForm) miniForm.style.display = 'none';
-	
+
 	// Show thank you message
 	displayBotMessage({
 		message: `Thank you ${name}! Your details are saved. How else can I help you today?`,
@@ -1173,7 +1140,7 @@ function handleFormSubmit(e) {
 		alert('Please fill in all fields');
 		return;
 	}
-	
+
 	// Full phone with country code
 	const fullPhone = countryCode + phone;
 
@@ -1203,8 +1170,8 @@ function handleFormSubmit(e) {
 
 function sendEmailViaSMTP(name, userEmail, phone, chatHistory, source = 'Chatbot Lead Form') {
 	// Check if configuration is set
-	if (EMAIL_CONFIG.GMAIL_ADDRESS === 'YOUR_GMAIL@gmail.com' || 
-	    EMAIL_CONFIG.GMAIL_APP_PASSWORD === 'YOUR_APP_PASSWORD') {
+	if (EMAIL_CONFIG.GMAIL_ADDRESS === 'YOUR_GMAIL@gmail.com' ||
+		EMAIL_CONFIG.GMAIL_APP_PASSWORD === 'YOUR_APP_PASSWORD') {
 		console.warn('Gmail SMTP not configured. Saving to localStorage only.');
 		saveLeadToLocalStorage(name, userEmail, phone, chatHistory);
 		showSuccessMessage();
@@ -1241,11 +1208,11 @@ This email was sent from FreightForce.AI website chatbot.
 		Subject: `New Lead: ${name} - FreightForce.AI (${source})`,
 		Body: emailBody,
 		ReplyTo: userEmail
-	}).then(function(message) {
+	}).then(function (message) {
 		console.log('Email sent via SMTP:', message);
 		showSuccessMessage();
 		saveLeadToLocalStorage(name, userEmail, phone, chatHistory);
-	}).catch(function(error) {
+	}).catch(function (error) {
 		console.error('SMTP email failed:', error);
 		// Save locally even if email fails
 		saveLeadToLocalStorage(name, userEmail, phone, chatHistory);
@@ -1263,9 +1230,9 @@ function sendEmailViaEmailJS(name, userEmail, phone, chatHistory, source = 'Chat
 	}
 
 	// Check if configuration is set
-	if (EMAIL_CONFIG.EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' || 
-	    EMAIL_CONFIG.EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID' ||
-	    EMAIL_CONFIG.EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+	if (EMAIL_CONFIG.EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' ||
+		EMAIL_CONFIG.EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID' ||
+		EMAIL_CONFIG.EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
 		console.warn('EmailJS not configured. Saving to localStorage only.');
 		saveLeadToLocalStorage(name, userEmail, phone, chatHistory);
 		showSuccessMessage();
@@ -1291,17 +1258,17 @@ function sendEmailViaEmailJS(name, userEmail, phone, chatHistory, source = 'Chat
 		EMAILJS_CONFIG.TEMPLATE_ID,
 		templateParams
 	)
-	.then(function(response) {
-		console.log('Email sent via EmailJS:', response);
-		showSuccessMessage();
-		saveLeadToLocalStorage(name, userEmail, phone, chatHistory);
-	})
-	.catch(function(error) {
-		console.error('EmailJS failed:', error);
-		saveLeadToLocalStorage(name, userEmail, phone, chatHistory);
-		showSuccessMessage();
-		alert('Thank you! Your information has been saved. Our team will contact you soon.');
-	});
+		.then(function (response) {
+			console.log('Email sent via EmailJS:', response);
+			showSuccessMessage();
+			saveLeadToLocalStorage(name, userEmail, phone, chatHistory);
+		})
+		.catch(function (error) {
+			console.error('EmailJS failed:', error);
+			saveLeadToLocalStorage(name, userEmail, phone, chatHistory);
+			showSuccessMessage();
+			alert('Thank you! Your information has been saved. Our team will contact you soon.');
+		});
 }
 
 function saveLeadToLocalStorage(name, email, phone, chatHistory) {
@@ -1365,5 +1332,5 @@ function resetChatbot() {
 	if (form) form.reset();
 }
 
-// Initialize chatbot when DOM is ready
-document.addEventListener('DOMContentLoaded', initChatbot);
+// // Initialize chatbot when DOM is ready
+// document.addEventListener('DOMContentLoaded', initChatbot);
