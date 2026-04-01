@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
     <!-- SEO Meta Tags -->
-    <title>FreightForce.AI | Get More Freight Clients & Automate Follow-ups with AI</title>
+    <title>FreightForce.AI | Get More Freight Clients &amp; Automate Follow-ups with AI</title>
     <meta name="description"
         content="FreightForce.AI helps freight forwarders get more clients and automate follow-ups with AI. Solve lost leads, slow follow-ups, delayed payments with AI employees.">
     <meta name="keywords"
@@ -19,7 +19,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://freightforce.ai/">
-    <meta property="og:title" content="FreightForce.AI - Get More Freight Clients & Automate Follow-ups with AI">
+    <meta property="og:title" content="FreightForce.AI - Get More Freight Clients &amp; Automate Follow-ups with AI">
     <meta property="og:description"
         content="Replace repetitive manpower with AI employees. Solve lost leads, slow follow-ups, delayed payments. 60% cost reduction, 24/7 operations.">
     <meta property="og:image" content="https://freightforce.ai/assets/images/og-image.jpg">
@@ -27,7 +27,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://freightforce.ai/">
-    <meta property="twitter:title" content="FreightForce.AI - Get More Freight Clients & Automate Follow-ups with AI">
+    <meta property="twitter:title" content="FreightForce.AI - Get More Freight Clients &amp; Automate Follow-ups with AI">
     <meta property="twitter:description"
         content="Replace repetitive manpower with AI employees. 60% cost reduction, 24/7 operations.">
     <meta property="twitter:image" content="https://freightforce.ai/assets/images/og-image.jpg">
@@ -39,7 +39,7 @@
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="apple-touch-icon" href="assets/images/favicon.ico">
 
-    <!-- Preload Critical Assets -->
+    <!-- Preconnect for critical third-party origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -47,8 +47,12 @@
     <!-- Bootstrap 5 CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome (non-blocking via media trick) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 
     <!-- Google Fonts -->
     <link
@@ -63,47 +67,28 @@
 
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "FreightForce.AI",
-            "url": "https://freightforce.ai/",
-            "logo": "https://freightforce.ai/assets/logo.png",
-            "description": "AI employees for freight forwarders - Get more clients and automate follow-ups with AI",
-            "sameAs": [
-                "https://www.linkedin.com/company/freightforceai",
-                "https://twitter.com/freightforceai"
-            ],
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-85888-05674",
-                "contactType": "customer service",
-                "email": "admin@freightforce.ai"
-            }
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "FreightForce.AI",
+        "url": "https://freightforce.ai/",
+        "logo": "https://freightforce.ai/assets/logo.png",
+        "description": "AI employees for freight forwarders - Get more clients and automate follow-ups with AI",
+        "sameAs": [
+            "https://www.linkedin.com/company/freightforceai",
+            "https://twitter.com/freightforceai"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-85888-05674",
+            "contactType": "customer service",
+            "email": "admin@freightforce.ai"
         }
+    }
     </script>
-
-    <!-- EmailJS Library for Chatbot -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <!-- SMTP.js for direct Gmail SMTP (Alternative to EmailJS) -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
 </head>
 
 <body>
-    <!-- ========== CUSTOM CURSOR ========== -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
-    <!-- ========== BACKGROUND ANIMATION (Existing) ========== -->
-    <div class="background-animation">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-        <canvas id="particleCanvas"></canvas>
-    </div>
-
     <!-- ========== CUSTOM CURSOR ========== -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
@@ -167,10 +152,7 @@
 
         <!-- ========== HERO SECTION ========== -->
         <section id="home" class="hero-section">
-            <!-- 3D Particle Canvas -->
             <canvas id="hero-particles-canvas" class="hero-particles-canvas"></canvas>
-
-            <!-- Glow Effect Overlay -->
             <div class="hero-glow-overlay"></div>
 
             <div class="container relative-content">
@@ -179,12 +161,10 @@
                         <span>✨ AI-Powered Future of Freight</span>
                     </div>
 
-                    <!-- Heading: Single Line -->
                     <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         AI Workforce for
                     </h1>
 
-                    <!-- Typing Text: Next Line -->
                     <div class="typing-wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
                         <span id="typed-text" class="typed-text"></span>
                     </div>
@@ -200,14 +180,11 @@
                         </a>
                     </div>
 
-                    <!-- Sleek Stats Cards - Inline Flex Style -->
                     <div class="hero-stats-inline" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                         <div class="stat-item">
                             <svg class="stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2">
-                                <path
-                                    d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
-                                </path>
+                                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
                             </svg>
                             <div>
                                 <div class="stat-number" data-count="5">0</div>
@@ -242,12 +219,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ========== NEW SECTION: WHY FREIGHT COMPANIES STRUGGLE ========== -->
+        <!-- ========== WHY FREIGHT COMPANIES STRUGGLE ========== -->
         <section id="struggle" class="struggle-section">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
@@ -258,9 +234,7 @@
                 <div class="row g-4">
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="struggle-card">
-                            <div class="struggle-icon">
-                                <i class="fas fa-user-slash"></i>
-                            </div>
+                            <div class="struggle-icon"><i class="fas fa-user-slash"></i></div>
                             <h3>Lost Leads</h3>
                             <p>Inbound inquiries go unanswered for hours. Follow-ups never happen. Potential clients
                                 slip away to competitors who respond faster.</p>
@@ -272,9 +246,7 @@
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="struggle-card">
-                            <div class="struggle-icon">
-                                <i class="fas fa-hourglass-half"></i>
-                            </div>
+                            <div class="struggle-icon"><i class="fas fa-hourglass-half"></i></div>
                             <h3>Slow Follow-ups</h3>
                             <p>Sales team spends hours manually sending quotes and chasing clients. No automated system
                                 means delayed responses and missed opportunities.</p>
@@ -286,9 +258,7 @@
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="struggle-card">
-                            <div class="struggle-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
+                            <div class="struggle-icon"><i class="fas fa-clock"></i></div>
                             <h3>Delayed Payments</h3>
                             <p>Manual invoicing and payment follow-ups cause cash flow problems. 30-60 day payment
                                 cycles become 90+ days without proper tracking.</p>
@@ -300,7 +270,6 @@
                     </div>
                 </div>
 
-                <!-- Additional Stats Row -->
                 <div class="struggle-stats-row" data-aos="fade-up" data-aos-delay="400">
                     <div class="stat-item">
                         <span class="stat-number">$15,000+</span>
@@ -358,8 +327,7 @@
             </div>
         </section>
 
-
-        <!-- ========== AI EMPLOYEES SECTION - PREMIUM INTERACTIVE TABS ========== -->
+        <!-- ========== AI EMPLOYEES SECTION ========== -->
         <section id="employees" class="employees-section">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
@@ -368,20 +336,19 @@
                     <p>5 specialized AI agents working 24/7 for your freight business</p>
                 </div>
 
-                <!-- Premium Tabs with Descriptions -->
                 <div class="ai-tabs-premium" data-aos="fade-up" data-aos-delay="100">
                     <button class="tab-premium active" data-tab="sales">
                         <div class="tab-icon"><i class="fas fa-chart-line"></i></div>
                         <div class="tab-text">
                             <span class="tab-title">Sales AI</span>
-                            <span class="tab-desc">Lead gen & follow-ups</span>
+                            <span class="tab-desc">Lead gen &amp; follow-ups</span>
                         </div>
                     </button>
                     <button class="tab-premium" data-tab="ops">
                         <div class="tab-icon"><i class="fas fa-ship"></i></div>
                         <div class="tab-text">
                             <span class="tab-title">Ops AI</span>
-                            <span class="tab-desc">Tracking & alerts</span>
+                            <span class="tab-desc">Tracking &amp; alerts</span>
                         </div>
                     </button>
                     <button class="tab-premium" data-tab="support">
@@ -395,23 +362,21 @@
                         <div class="tab-icon"><i class="fas fa-coins"></i></div>
                         <div class="tab-text">
                             <span class="tab-title">Accounts AI</span>
-                            <span class="tab-desc">Invoicing & payments</span>
+                            <span class="tab-desc">Invoicing &amp; payments</span>
                         </div>
                     </button>
                     <button class="tab-premium" data-tab="pricing">
                         <div class="tab-icon"><i class="fas fa-calculator"></i></div>
                         <div class="tab-text">
                             <span class="tab-title">Pricing AI</span>
-                            <span class="tab-desc">Quotes & margins</span>
+                            <span class="tab-desc">Quotes &amp; margins</span>
                         </div>
                     </button>
                 </div>
 
-                <!-- Tab Content Container -->
                 <div class="tab-content-premium">
 
-                    <!-- ========== SALES AI TAB ========== -->
-                    <!-- ========== SALES AI TAB ========== -->
+                    <!-- SALES AI TAB -->
                     <div class="tab-pane-premium active" id="tab-sales-premium">
                         <div class="agent-card-premium">
                             <div class="agent-header-premium">
@@ -419,18 +384,15 @@
                                 <div class="agent-info-premium">
                                     <h3>Sales AI</h3>
                                     <p>Finds and follows up on every lead. Sends the first email, the second follow-up,
-                                        and the fifth one too.
-                                    </p>
+                                        and the fifth one too.</p>
                                 </div>
                             </div>
 
-                            <!-- Sales Activity Feed - Like Reference -->
                             <div class="sales-activity-feed">
                                 <div class="activity-header">
                                     <h4>📧 Outreach Sequence — Active</h4>
                                     <span class="sent-count">4 sent</span>
                                 </div>
-
                                 <div class="activity-list">
                                     <div class="activity-lead">
                                         <div class="lead-info">
@@ -443,7 +405,6 @@
                                             <span class="time">2m ago</span>
                                         </div>
                                     </div>
-
                                     <div class="activity-lead">
                                         <div class="lead-info">
                                             <div class="lead-email">ops@meridianfreight.com</div>
@@ -455,7 +416,6 @@
                                             <span class="time">8m ago</span>
                                         </div>
                                     </div>
-
                                     <div class="activity-lead">
                                         <div class="lead-info">
                                             <div class="lead-email">import@globalchain.co</div>
@@ -467,7 +427,6 @@
                                             <span class="time">15m ago</span>
                                         </div>
                                     </div>
-
                                     <div class="activity-lead">
                                         <div class="lead-info">
                                             <div class="lead-email">bookings@tradewinds.io</div>
@@ -480,51 +439,37 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="activity-footer">
                                     <i class="fas fa-fire"></i>
                                     <span>3 leads warmed up — ready for handoff</span>
                                 </div>
                             </div>
 
-                            <!-- What Sales AI handles -->
                             <div class="features-section">
                                 <h4>⚡ What it handles</h4>
                                 <div class="features-grid">
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Lead prospecting across
-                                            directories and
-                                            inbound channels</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Follow-up sequences via
-                                            email, WhatsApp,
-                                            and web</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Lead scoring based on
-                                            shipment volume and
-                                            trade lanes</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Campaign management
-                                            across WhatsApp and
-                                            email</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Meeting scheduler</span>
-                                    </div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Proposal
-                                            generation</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Lead prospecting across directories and inbound channels</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Follow-up sequences via email, WhatsApp, and web</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Lead scoring based on shipment volume and trade lanes</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Campaign management across WhatsApp and email</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Meeting scheduler</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Proposal generation</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ========== OPS AI TAB - SHIPMENT TRACKING TIMELINE ========== -->
+                    <!-- OPS AI TAB -->
                     <div class="tab-pane-premium" id="tab-ops-premium">
                         <div class="agent-card-premium">
                             <div class="agent-header-premium">
                                 <div class="agent-icon-premium">📦</div>
                                 <div class="agent-info-premium">
                                     <h3>Ops AI</h3>
-                                    <p>Keeps every shipment visible and on schedule. Pulls tracking updates
-                                        automatically.</p>
+                                    <p>Keeps every shipment visible and on schedule. Pulls tracking updates automatically.</p>
                                 </div>
                             </div>
 
-                            <!-- Shipment Tracking Timeline -->
                             <div class="shipment-tracking">
                                 <div class="tracking-header">
                                     <div class="tracking-id">
@@ -536,7 +481,6 @@
                                         <span>ON SCHEDULE</span>
                                     </div>
                                 </div>
-
                                 <div class="timeline">
                                     <div class="timeline-item completed">
                                         <div class="timeline-dot"></div>
@@ -579,7 +523,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="tracking-alerts">
                                     <div class="alert-item info">
                                         <i class="fas fa-info-circle"></i>
@@ -591,24 +534,18 @@
                             <div class="features-section">
                                 <h4>⚡ What Ops AI handles</h4>
                                 <div class="features-grid">
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Carrier-connected
-                                            tracking</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>ETD/ETA change
-                                            alerts</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Port congestion
-                                            flags</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Customs hold
-                                            notifications</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Routing
-                                            alternatives</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Client status
-                                            updates</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Carrier-connected tracking</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>ETD/ETA change alerts</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Port congestion flags</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Customs hold notifications</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Routing alternatives</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Client status updates</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ========== SUPPORT AI TAB - LIVE CHAT ========== -->
+                    <!-- SUPPORT AI TAB -->
                     <div class="tab-pane-premium" id="tab-support-premium">
                         <div class="agent-card-premium">
                             <div class="agent-header-premium">
@@ -619,7 +556,6 @@
                                 </div>
                             </div>
 
-                            <!-- Live Chat Preview -->
                             <div class="live-chat-preview">
                                 <div class="chat-window">
                                     <div class="chat-window-header">
@@ -634,8 +570,7 @@
                                         </div>
                                         <div class="message ai">
                                             <div class="message-bubble">Your shipment is currently in transit from
-                                                Mumbai and expected to arrive on April 15, 2024. <a href="#">Track live
-                                                    →</a></div>
+                                                Mumbai and expected to arrive on April 15, 2024. <a href="#">Track live →</a></div>
                                             <div class="message-time">Just now</div>
                                         </div>
                                         <div class="message user">
@@ -652,10 +587,8 @@
                                     </div>
                                 </div>
                                 <div class="chat-stats">
-                                    <div class="stat"><i class="fas fa-clock"></i> Avg response: <strong>4 sec</strong>
-                                    </div>
-                                    <div class="stat"><i class="fas fa-smile"></i> Satisfaction: <strong>98%</strong>
-                                    </div>
+                                    <div class="stat"><i class="fas fa-clock"></i> Avg response: <strong>4 sec</strong></div>
+                                    <div class="stat"><i class="fas fa-smile"></i> Satisfaction: <strong>98%</strong></div>
                                     <div class="stat"><i class="fas fa-globe"></i> 50+ languages</div>
                                 </div>
                             </div>
@@ -663,55 +596,42 @@
                             <div class="features-section">
                                 <h4>⚡ What Support AI handles</h4>
                                 <div class="features-grid">
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Instant query
-                                            resolution</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Multilingual
-                                            support</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Ticket automation</span>
-                                    </div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Sentiment analysis</span>
-                                    </div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Escalation
-                                            handling</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Knowledge base
-                                            integration</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Instant query resolution</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Multilingual support</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Ticket automation</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Sentiment analysis</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Escalation handling</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Knowledge base integration</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ========== ACCOUNTS AI TAB ========== -->
+                    <!-- ACCOUNTS AI TAB -->
                     <div class="tab-pane-premium" id="tab-accounts-premium">
                         <div class="agent-card-premium">
                             <div class="agent-header-premium">
                                 <div class="agent-icon-premium">💰</div>
                                 <div class="agent-info-premium">
                                     <h3>Accounts AI</h3>
-                                    <p>Automated invoicing & payment follow-ups. Reduces DSO by 45%.</p>
+                                    <p>Automated invoicing &amp; payment follow-ups. Reduces DSO by 45%.</p>
                                 </div>
                             </div>
-
                             <div class="features-section">
                                 <h4>⚡ What Accounts AI handles</h4>
                                 <div class="features-grid">
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Auto invoice
-                                            generation</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Payment reminders &
-                                            follow-ups</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Reconciliation
-                                            automation</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Overdue tracking</span>
-                                    </div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Financial
-                                            reporting</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Cash flow insights</span>
-                                    </div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Auto invoice generation</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Payment reminders &amp; follow-ups</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Reconciliation automation</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Overdue tracking</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Financial reporting</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Cash flow insights</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ========== PRICING AI TAB ========== -->
+                    <!-- PRICING AI TAB -->
                     <div class="tab-pane-premium" id="tab-pricing-premium">
                         <div class="agent-card-premium">
                             <div class="agent-header-premium">
@@ -721,22 +641,15 @@
                                     <p>Dynamic pricing engine that maximizes margins while winning bids.</p>
                                 </div>
                             </div>
-
                             <div class="features-section">
                                 <h4>⚡ What Pricing AI handles</h4>
                                 <div class="features-grid">
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Dynamic rate
-                                            optimization</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Auto quote
-                                            generation</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Competitor rate
-                                            analysis</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Margin
-                                            recommendations</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Bid winning
-                                            prediction</span></div>
-                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Market rate
-                                            intelligence</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Dynamic rate optimization</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Auto quote generation</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Competitor rate analysis</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Margin recommendations</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Bid winning prediction</span></div>
+                                    <div class="feature-item"><i class="fas fa-bolt"></i><span>Market rate intelligence</span></div>
                                 </div>
                             </div>
                         </div>
@@ -755,7 +668,6 @@
                     <p>Flexible pricing options to scale your freight operations</p>
                 </div>
 
-                <!-- Pricing Cards -->
                 <div class="row g-4">
                     <!-- Starter Plan -->
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -763,8 +675,7 @@
                             <div class="plan-icon">🚀</div>
                             <h3 class="plan-name">Starter</h3>
                             <p class="plan-desc">For forwarders doing under 200 shipments/month who want to start with
-                                quoting or follow-ups
-                            </p>
+                                quoting or follow-ups</p>
                             <div class="plan-price">
                                 <span class="currency">$</span>
                                 <span class="price">299</span>
@@ -799,7 +710,7 @@
                                 <li><i class="fas fa-check"></i> Unlimited interactions</li>
                                 <li><i class="fas fa-check"></i> WhatsApp + Email + Web Chat</li>
                                 <li><i class="fas fa-check"></i> Priority support</li>
-                                <li><i class="fas fa-check"></i> Advanced analytics & reporting</li>
+                                <li><i class="fas fa-check"></i> Advanced analytics &amp; reporting</li>
                                 <li><i class="fas fa-check"></i> Custom workflow rules</li>
                                 <li><i class="fas fa-check"></i> API access</li>
                             </ul>
@@ -928,14 +839,13 @@
             </div>
         </section>
 
-        <!-- ========== CTA SECTION with LEAD FORM ========== -->
+        <!-- ========== CTA SECTION ========== -->
         <section id="cta" class="cta-section">
             <div class="container">
                 <div class="cta-box" data-aos="fade-up">
                     <h2>Ready to <span class="gradient-text">get more clients</span> and automate follow-ups?</h2>
                     <p>Join 500+ freight forwarders already using AI employees</p>
 
-                    <!-- Lead Capture Form -->
                     <form id="leadForm" class="cta-form">
                         <div class="form-row">
                             <input type="text" id="leadName" placeholder="Full Name" required>
@@ -959,12 +869,10 @@
                         </button>
                     </form>
 
-                    <!-- Success Message -->
                     <div id="successMessage"
                         style="display: none; margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; border-radius: 12px;">
                         <i class="fas fa-check-circle" style="color: #10b981;"></i>
-                        <span style="color: #10b981; margin-left: 10px;">Thank you! Our team will contact you within 24
-                            hours.</span>
+                        <span style="color: #10b981; margin-left: 10px;">Thank you! Our team will contact you within 24 hours.</span>
                     </div>
 
                     <p class="form-note">✓ Free consultation ✓ No commitment ✓ 7-day trial</p>
@@ -978,8 +886,7 @@
                 <div class="footer-grid">
                     <div class="footer-col brand-col">
                         <div class="footer-logo">
-                            <svg width="32" height="32" viewBox="0 0 40 40" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" stop-color="#6366f1" />
@@ -1027,8 +934,7 @@
                     <div class="footer-col">
                         <h4 class="footer-title">Get in Touch</h4>
                         <ul class="footer-contact">
-                            <li><i class="fas fa-envelope"></i> <a
-                                    href="mailto:admin@freightforce.ai">admin@freightforce.ai</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:admin@freightforce.ai">admin@freightforce.ai</a></li>
                             <li><i class="fas fa-phone-alt"></i> <a href="tel:+918588805674">+91 85888 05674</a></li>
                             <li><i class="fas fa-map-marker-alt"></i> Mumbai, India | San Francisco, USA</li>
                         </ul>
@@ -1062,42 +968,28 @@
 
     </main>
 
-    <!-- ========== SMART GUIDED CHATBOT ========== -->
-    <!-- Floating Chat Icon -->
-    <div id="chatbot-toggle" class=" trigger-chatbot chatbot-float">
-        <div class="chatbot-float-icon">
-            <i class="fas fa-robot"></i>
-        </div>
+    <!-- ========== CHATBOT ========== -->
+    <div id="chatbot-toggle" class="trigger-chatbot chatbot-float">
+        <div class="chatbot-float-icon"><i class="fas fa-robot"></i></div>
         <span class="chatbot-float-label"></span>
         <div class="chatbot-notification">1</div>
     </div>
 
-    <!-- Chat Window -->
     <div id="chatbot-window" class="chatbot-window">
-        <!-- Header -->
         <div class="chatbot-header">
             <div class="chatbot-brand">
-                <div class="chatbot-avatar">
-                    <i class="fas fa-robot"></i>
-                </div>
+                <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
                 <div class="chatbot-info">
                     <h4>FreightForce AI</h4>
-                    <span class="chatbot-status">
-                        <span class="status-dot"></span> Online
-                    </span>
+                    <span class="chatbot-status"><span class="status-dot"></span> Online</span>
                 </div>
             </div>
-            <button id="chatbot-close" class="chatbot-close">
-                <i class="fas fa-times"></i>
-            </button>
+            <button id="chatbot-close" class="chatbot-close"><i class="fas fa-times"></i></button>
         </div>
 
-        <!-- Messages Area -->
-        <div id="chatbot-messages" class="chatbot-messages">
-            <!-- Welcome message will be injected by JS -->
-        </div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
 
-        <!-- Quick Contact Form (for new visitors) -->
+        <!-- Quick Contact Form -->
         <div id="quick-contact-form" class="quick-contact-form" style="display: none;">
             <div class="quick-form-header">
                 <span class="quick-form-title">Contact Us</span>
@@ -1111,43 +1003,21 @@
                 </div>
                 <div class="form-group phone-group">
                     <select id="quickCountryCode" class="country-code-select">
-                        <option value="+91">+91 🇮🇳</option>
-                        <option value="+1">+1 🇺🇸</option>
-                        <option value="+44">+44 🇬🇧</option>
-                        <option value="+61">+61 🇦🇺</option>
-                        <option value="+971">+971 🇦🇪</option>
-                        <option value="+65">+65 🇸🇬</option>
-                        <option value="+966">+966 🇸🇦</option>
-                        <option value="+974">+974 🇶🇦</option>
-                        <option value="+965">+965 🇰🇼</option>
-                        <option value="+20">+20 🇪🇬</option>
-                        <option value="+27">+27 🇿🇦</option>
-                        <option value="+86">+86 🇨🇳</option>
-                        <option value="+81">+81 🇯🇵</option>
-                        <option value="+82">+82 🇰🇷</option>
-                        <option value="+49">+49 🇩🇪</option>
-                        <option value="+33">+33 🇫🇷</option>
-                        <option value="+39">+39 🇮🇹</option>
-                        <option value="+34">+34 🇪🇸</option>
-                        <option value="+7">+7 🇷🇺</option>
-                        <option value="+55">+55 🇧🇷</option>
-                        <option value="+52">+52 🇲🇽</option>
-                        <option value="+62">+62 🇮🇩</option>
-                        <option value="+60">+60 🇲🇾</option>
-                        <option value="+66">+66 🇹🇭</option>
-                        <option value="+84">+84 🇻🇳</option>
-                        <option value="+880">+880 🇧🇩</option>
-                        <option value="+92">+92 🇵🇰</option>
-                        <option value="+94">+94 🇱🇰</option>
-                        <option value="+977">+977 🇳🇵</option>
-                        <option value="+95">+95 🇲🇲</option>
-                        <option value="+855">+855 🇰🇭</option>
-                        <option value="+856">+856 🇱🇦</option>
-                        <option value="+670">+670 🇹🇱</option>
-                        <option value="+673">+673 🇧🇳</option>
-                        <option value="+679">+679 🇫🇯</option>
-                        <option value="+960">+960 🇲🇻</option>
-                        <option value="+976">+976 🇲🇳</option>
+                        <option value="+91">+91 🇮🇳</option><option value="+1">+1 🇺🇸</option>
+                        <option value="+44">+44 🇬🇧</option><option value="+61">+61 🇦🇺</option>
+                        <option value="+971">+971 🇦🇪</option><option value="+65">+65 🇸🇬</option>
+                        <option value="+966">+966 🇸🇦</option><option value="+974">+974 🇶🇦</option>
+                        <option value="+965">+965 🇰🇼</option><option value="+20">+20 🇪🇬</option>
+                        <option value="+27">+27 🇿🇦</option><option value="+86">+86 🇨🇳</option>
+                        <option value="+81">+81 🇯🇵</option><option value="+82">+82 🇰🇷</option>
+                        <option value="+49">+49 🇩🇪</option><option value="+33">+33 🇫🇷</option>
+                        <option value="+39">+39 🇮🇹</option><option value="+34">+34 🇪🇸</option>
+                        <option value="+7">+7 🇷🇺</option><option value="+55">+55 🇧🇷</option>
+                        <option value="+52">+52 🇲🇽</option><option value="+62">+62 🇮🇩</option>
+                        <option value="+60">+60 🇲🇾</option><option value="+66">+66 🇹🇭</option>
+                        <option value="+84">+84 🇻🇳</option><option value="+880">+880 🇧🇩</option>
+                        <option value="+92">+92 🇵🇰</option><option value="+94">+94 🇱🇰</option>
+                        <option value="+977">+977 🇳🇵</option><option value="+95">+95 🇲🇲</option>
                     </select>
                     <input type="tel" id="quickPhone" placeholder="Mobile Number" required maxlength="10">
                 </div>
@@ -1161,12 +1031,10 @@
             </form>
         </div>
 
-        <!-- Mini Lead Form (appears every 2nd message) -->
+        <!-- Mini Lead Form -->
         <div id="mini-lead-form" class="mini-lead-form" style="display: none;">
             <div class="mini-form-header">
-                <span class="mini-form-title" style="display: block; text-align: center; width: 100%;">
-                    Get 7 Days Free Trial
-                </span>
+                <span class="mini-form-title" style="display: block; text-align: center; width: 100%;">Get 7 Days Free Trial</span>
                 <button type="button" class="mini-form-close" onclick="closeMiniForm()">
                     <i class="fas fa-times"></i>
                 </button>
@@ -1177,43 +1045,15 @@
                 </div>
                 <div class="form-group phone-group">
                     <select id="miniCountryCode" class="country-code-select">
-                        <option value="+91">+91 🇮🇳</option>
-                        <option value="+1">+1 🇺🇸</option>
-                        <option value="+44">+44 🇬🇧</option>
-                        <option value="+61">+61 🇦🇺</option>
-                        <option value="+971">+971 🇦🇪</option>
-                        <option value="+65">+65 🇸🇬</option>
-                        <option value="+966">+966 🇸🇦</option>
-                        <option value="+974">+974 🇶🇦</option>
-                        <option value="+965">+965 🇰🇼</option>
-                        <option value="+20">+20 🇪🇬</option>
-                        <option value="+27">+27 🇿🇦</option>
-                        <option value="+86">+86 🇨🇳</option>
-                        <option value="+81">+81 🇯🇵</option>
-                        <option value="+82">+82 🇰🇷</option>
-                        <option value="+49">+49 🇩🇪</option>
-                        <option value="+33">+33 🇫🇷</option>
-                        <option value="+39">+39 🇮🇹</option>
-                        <option value="+34">+34 🇪🇸</option>
-                        <option value="+7">+7 🇷🇺</option>
-                        <option value="+55">+55 🇧🇷</option>
-                        <option value="+52">+52 🇲🇽</option>
-                        <option value="+62">+62 🇮🇩</option>
-                        <option value="+60">+60 🇲🇾</option>
-                        <option value="+66">+66 🇹🇭</option>
-                        <option value="+84">+84 🇻🇳</option>
-                        <option value="+880">+880 🇧🇩</option>
-                        <option value="+92">+92 🇵🇰</option>
-                        <option value="+94">+94 🇱🇰</option>
+                        <option value="+91">+91 🇮🇳</option><option value="+1">+1 🇺🇸</option>
+                        <option value="+44">+44 🇬🇧</option><option value="+61">+61 🇦🇺</option>
+                        <option value="+971">+971 🇦🇪</option><option value="+65">+65 🇸🇬</option>
+                        <option value="+966">+966 🇸🇦</option><option value="+974">+974 🇶🇦</option>
+                        <option value="+965">+965 🇰🇼</option><option value="+20">+20 🇪🇬</option>
+                        <option value="+86">+86 🇨🇳</option><option value="+81">+81 🇯🇵</option>
+                        <option value="+49">+49 🇩🇪</option><option value="+33">+33 🇫🇷</option>
+                        <option value="+92">+92 🇵🇰</option><option value="+94">+94 🇱🇰</option>
                         <option value="+977">+977 🇳🇵</option>
-                        <option value="+95">+95 🇲🇲</option>
-                        <option value="+855">+855 🇰🇭</option>
-                        <option value="+856">+856 🇱🇦</option>
-                        <option value="+670">+670 🇹🇱</option>
-                        <option value="+673">+673 🇧🇳</option>
-                        <option value="+679">+679 🇫🇯</option>
-                        <option value="+960">+960 🇲🇻</option>
-                        <option value="+976">+976 🇲🇳</option>
                     </select>
                     <input type="tel" id="miniPhone" placeholder="Mobile Number" required maxlength="10">
                 </div>
@@ -1224,62 +1064,31 @@
                     <button type="button" class="btn-close-form" onclick="closeMiniForm()">
                         <i class="fas fa-times"></i> Close
                     </button>
-
-                    <button type="submit" class="btn-continue" onclick="submitMiniForm()">
+                    <button type="button" class="btn-continue" onclick="submitMiniForm()">
                         <i class="fas fa-check"></i> Continue Chat
                     </button>
                 </div>
             </form>
         </div>
 
-        <!-- Lead Capture Form (hidden by default) -->
+        <!-- Lead Capture Form -->
         <div id="chatbot-form" class="chatbot-form" style="display: none;">
-            <div class="form-title">Get 7 Days Free Trial
-            </div>
-
+            <div class="form-title">Get 7 Days Free Trial</div>
             <form id="leadCaptureForm">
                 <div class="form-group">
                     <input type="text" id="chatbotName" placeholder="Your Name" required>
                 </div>
                 <div class="form-group phone-group">
                     <select id="chatbotCountryCode" class="country-code-select">
-                        <option value="+91">+91 🇮🇳</option>
-                        <option value="+1">+1 🇺🇸</option>
-                        <option value="+44">+44 🇬🇧</option>
-                        <option value="+61">+61 🇦🇺</option>
-                        <option value="+971">+971 🇦🇪</option>
-                        <option value="+65">+65 🇸🇬</option>
-                        <option value="+966">+966 🇸🇦</option>
-                        <option value="+974">+974 🇶🇦</option>
-                        <option value="+965">+965 🇰🇼</option>
-                        <option value="+20">+20 🇪🇬</option>
-                        <option value="+27">+27 🇿🇦</option>
-                        <option value="+86">+86 🇨🇳</option>
-                        <option value="+81">+81 🇯🇵</option>
-                        <option value="+82">+82 🇰🇷</option>
-                        <option value="+49">+49 🇩🇪</option>
-                        <option value="+33">+33 🇫🇷</option>
-                        <option value="+39">+39 🇮🇹</option>
-                        <option value="+34">+34 🇪🇸</option>
-                        <option value="+7">+7 🇷🇺</option>
-                        <option value="+55">+55 🇧🇷</option>
-                        <option value="+52">+52 🇲🇽</option>
-                        <option value="+62">+62 🇮🇩</option>
-                        <option value="+60">+60 🇲🇾</option>
-                        <option value="+66">+66 🇹🇭</option>
-                        <option value="+84">+84 🇻🇳</option>
-                        <option value="+880">+880 🇧🇩</option>
-                        <option value="+92">+92 🇵🇰</option>
-                        <option value="+94">+94 🇱🇰</option>
+                        <option value="+91">+91 🇮🇳</option><option value="+1">+1 🇺🇸</option>
+                        <option value="+44">+44 🇬🇧</option><option value="+61">+61 🇦🇺</option>
+                        <option value="+971">+971 🇦🇪</option><option value="+65">+65 🇸🇬</option>
+                        <option value="+966">+966 🇸🇦</option><option value="+974">+974 🇶🇦</option>
+                        <option value="+965">+965 🇰🇼</option><option value="+20">+20 🇪🇬</option>
+                        <option value="+86">+86 🇨🇳</option><option value="+81">+81 🇯🇵</option>
+                        <option value="+49">+49 🇩🇪</option><option value="+33">+33 🇫🇷</option>
+                        <option value="+92">+92 🇵🇰</option><option value="+94">+94 🇱🇰</option>
                         <option value="+977">+977 🇳🇵</option>
-                        <option value="+95">+95 🇲🇲</option>
-                        <option value="+855">+855 🇰🇭</option>
-                        <option value="+856">+856 🇱🇦</option>
-                        <option value="+670">+670 🇹🇱</option>
-                        <option value="+673">+673 🇧🇳</option>
-                        <option value="+679">+679 🇫🇯</option>
-                        <option value="+960">+960 🇲🇻</option>
-                        <option value="+976">+976 🇲🇳</option>
                     </select>
                     <input type="tel" id="chatbotPhone" placeholder="Mobile Number" required maxlength="10">
                     <small class="error-msg" id="phoneError"></small>
@@ -1294,419 +1103,240 @@
             </form>
         </div>
 
-        <!-- Typing Indicator (hidden by default) -->
         <div id="chatbot-typing" class="chatbot-typing" style="display: none;">
-            <div class="typing-bubble">
-                <span></span><span></span><span></span>
-            </div>
+            <div class="typing-bubble"><span></span><span></span><span></span></div>
         </div>
 
-        <!-- Footer -->
-        <div class="chatbot-footer">
-            <span>Powered by FreightForce.AI</span>
-        </div>
+        <div class="chatbot-footer"><span>Powered by FreightForce.AI</span></div>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/app.js"></script>
-    <!-- Google Sheets Integration Script -->
-<script>
-// Your Google Sheets Web App URL
-const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyWmwAR8OIEdxXyD_8WuJgizuRptoRudMhEkkm-wjc6BVnq_pE98iof0Eyop1jcXGjW/exec';
+    <!-- ========== SCRIPTS (deferred for faster LCP) ========== -->
+    <script src="assets/js/jquery.min.js" defer></script>
+    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/js/aos.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
 
-// Function to submit data to Google Sheets
-async function submitToGoogleSheets(formData) {
-    try {
-        const response = await fetch(GOOGLE_SHEETS_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
-        
-        console.log('✅ Data submitted to Google Sheets:', formData);
-        return { success: true };
-    } catch (error) {
-        console.error('❌ Error submitting to Google Sheets:', error);
-        return { success: false, error: error };
-    }
-}
+    <!-- ========== GOOGLE SHEETS INTEGRATION ========== -->
+    <script>
+    // Google Sheets Web App URL — single source of truth
+    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyWmwAR8OIEdxXyD_8WuJgizuRptoRudMhEkkm-wjc6BVnq_pE98iof0Eyop1jcXGjW/exec';
 
-// ========== MAIN LEAD FORM (CTA Section) ==========
-document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const submitBtn = document.getElementById('submitLead');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-    submitBtn.disabled = true;
-    
-    const name = document.getElementById('leadName').value;
-    const email = document.getElementById('leadEmail').value;
-    const phone = document.getElementById('leadPhone').value;
-    const company = document.getElementById('leadCompany').value;
-    const plan = document.getElementById('leadPlan').value;
-    
-    // Validate phone (10 digits for Indian numbers)
-    if (!/^\d{10}$/.test(phone)) {
-        alert('Please enter a valid 10-digit mobile number');
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        return;
-    }
-    
-    const formData = {
-        formType: 'Main Lead Form',
-        name: name,
-        email: email,
-        phone: phone,
-        company: company,
-        plan: plan,
-        countryCode: '+91',  // Default India, can be modified
-        fullPhone: '+91' + phone,
-        source: 'CTA Section'
-    };
-    
-    await submitToGoogleSheets(formData);
-    
-    // Show success message
-    const successMsg = document.getElementById('successMessage');
-    if (successMsg) {
-        successMsg.style.display = 'block';
-        this.reset();
-        
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-            successMsg.style.display = 'none';
-        }, 5000);
-    }
-});
-
-// ========== NEWSLETTER FORM ==========
-document.getElementById('newsletterForm')?.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const emailInput = this.querySelector('input[type="email"]');
-    const email = emailInput?.value;
-    const submitBtn = this.querySelector('button');
-    
-    if (!email) return;
-    
-    const originalHTML = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-    submitBtn.disabled = true;
-    
-    const formData = {
-        formType: 'Newsletter',
-        name: 'Newsletter Subscriber',
-        email: email,
-        phone: '',
-        company: '',
-        plan: '',
-        countryCode: '',
-        fullPhone: '',
-        source: 'Newsletter Signup'
-    };
-    
-    await submitToGoogleSheets(formData);
-    
-    // Show success message
-    const successDiv = this.parentElement?.querySelector('.newsletter-success');
-    if (successDiv) {
-        successDiv.style.display = 'block';
-        setTimeout(() => {
-            successDiv.style.display = 'none';
-        }, 3000);
-    }
-    
-    if (emailInput) emailInput.value = '';
-    submitBtn.innerHTML = originalHTML;
-    submitBtn.disabled = false;
-});
-
-// ========== QUICK CONTACT FORM (Chatbot) ==========
-window.submitQuickForm = function() {
-    const name = document.getElementById('quickName')?.value;
-    const countryCode = document.getElementById('quickCountryCode')?.value;
-    const phone = document.getElementById('quickPhone')?.value;
-    const email = document.getElementById('quickEmail')?.value;
-    
-    if (!name || !phone || !email) {
-        alert('Please fill all fields');
-        return false;
-    }
-    
-    // Validate phone (10 digits)
-    if (!/^\d{10}$/.test(phone)) {
-        alert('Please enter a valid 10-digit mobile number');
-        return false;
-    }
-    
-    const fullPhone = countryCode + phone;
-    
-    const formData = {
-        formType: 'Quick Contact (Chatbot)',
-        name: name,
-        email: email,
-        phone: fullPhone,
-        company: '',
-        plan: '',
-        countryCode: countryCode,
-        fullPhone: fullPhone,
-        source: 'Chatbot - Quick Contact'
-    };
-    
-    submitToGoogleSheets(formData);
-    
-    // Close the form
-    window.closeQuickForm();
-    
-    // Add success message to chat
-    if (window.addBotMessage) {
-        window.addBotMessage("Thanks! Our team will contact you shortly. How can I help you today?");
-    }
-    
-    return false;
-};
-
-// ========== MINI LEAD FORM (Chatbot) ==========
-window.submitMiniForm = function() {
-    const name = document.getElementById('miniName')?.value;
-    const countryCode = document.getElementById('miniCountryCode')?.value;
-    const phone = document.getElementById('miniPhone')?.value;
-    const email = document.getElementById('miniEmail')?.value;
-    
-    if (!name || !phone || !email) {
-        alert('Please fill all fields');
-        return false;
-    }
-    
-    // Validate phone (10 digits)
-    if (!/^\d{10}$/.test(phone)) {
-        alert('Please enter a valid 10-digit mobile number');
-        return false;
-    }
-    
-    const fullPhone = countryCode + phone;
-    
-    const formData = {
-        formType: 'Mini Lead Form (Chatbot)',
-        name: name,
-        email: email,
-        phone: fullPhone,
-        company: '',
-        plan: '',
-        countryCode: countryCode,
-        fullPhone: fullPhone,
-        source: 'Chatbot - Mini Form'
-    };
-    
-    submitToGoogleSheets(formData);
-    
-    // Close the form
-    window.closeMiniForm();
-    
-    // Add success message to chat
-    if (window.addBotMessage) {
-        window.addBotMessage("Thanks for your details! You now have access to 7-day free trial. How can I help you?");
-    }
-    
-    return false;
-};
-
-// ========== LEAD CAPTURE FORM (Chatbot) ==========
-document.getElementById('leadCaptureForm')?.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('chatbotName')?.value;
-    const countryCode = document.getElementById('chatbotCountryCode')?.value;
-    const phone = document.getElementById('chatbotPhone')?.value;
-    const email = document.getElementById('chatbotEmail')?.value;
-    
-    // Clear previous errors
-    const phoneError = document.getElementById('phoneError');
-    const emailError = document.getElementById('emailError');
-    if (phoneError) phoneError.textContent = '';
-    if (emailError) emailError.textContent = '';
-    
-    // Validate phone (10 digits)
-    if (!/^\d{10}$/.test(phone)) {
-        if (phoneError) phoneError.textContent = 'Please enter a valid 10-digit mobile number';
-        return;
-    }
-    
-    // Validate email
-    if (!/^[^\s@]+@([^\s@]+\.)+[^\s@]+$/.test(email)) {
-        if (emailError) emailError.textContent = 'Please enter a valid email address';
-        return;
-    }
-    
-    const fullPhone = countryCode + phone;
-    
-    const formData = {
-        formType: 'Lead Capture (Chatbot)',
-        name: name,
-        email: email,
-        phone: fullPhone,
-        company: '',
-        plan: '',
-        countryCode: countryCode,
-        fullPhone: fullPhone,
-        source: 'Chatbot - Lead Form'
-    };
-    
-    await submitToGoogleSheets(formData);
-    
-    // Hide the form
-    const formDiv = document.getElementById('chatbot-form');
-    if (formDiv) formDiv.style.display = 'none';
-    
-    // Add success message
-    if (window.addBotMessage) {
-        window.addBotMessage("Thank you! Your 7-day free trial is activated. How can I help you with your freight needs?");
-    }
-    
-    // Reset form
-    this.reset();
-});
-
-// Helper function to add bot message
-window.addBotMessage = function(message) {
-    const messagesDiv = document.getElementById('chatbot-messages');
-    if (messagesDiv) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'message bot';
-        messageDiv.innerHTML = `
-            <div class="message-avatar">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="message-bubble">
-                ${message}
-            </div>
-        `;
-        messagesDiv.appendChild(messageDiv);
-        messagesDiv.scrollTop = messagesDiv.scrollHeight;
-    }
-};
-
-// Close functions
-window.closeQuickForm = function() {
-    const form = document.getElementById('quick-contact-form');
-    if (form) form.style.display = 'none';
-};
-
-window.closeMiniForm = function() {
-    const form = document.getElementById('mini-lead-form');
-    if (form) form.style.display = 'none';
-};
-
-console.log('✅ Google Sheets integration loaded successfully!');
-console.log('📊 Data will be saved to:', GOOGLE_SHEETS_URL);
-
-
-// Skip Quick Form function
-function skipQuickForm() {
-    console.log("Quick form skipped");
-    const formDiv = document.getElementById('quick-contact-form');
-    if (formDiv) formDiv.style.display = 'none';
-    
-    if (typeof addBotMessage === 'function') {
-        addBotMessage("No problem! How can I help you today?");
-    }
-}
-
-// Make sure submitQuickForm is defined globally
-window.submitQuickForm = function() {
-    console.log("🔵 Quick form submit triggered");
-    
-    const name = document.getElementById('quickName')?.value;
-    const countryCode = document.getElementById('quickCountryCode')?.value;
-    const phone = document.getElementById('quickPhone')?.value;
-    const email = document.getElementById('quickEmail')?.value;
-    
-    if (!name || !phone || !email) {
-        alert('❌ Please fill all fields');
-        return false;
-    }
-    
-    if (!/^\d{10}$/.test(phone)) {
-        alert('❌ Please enter a valid 10-digit mobile number');
-        return false;
-    }
-    
-    const fullPhone = countryCode + phone;
-    
-    const formData = {
-        formType: 'Quick Contact (Chatbot)',
-        name: name,
-        email: email,
-        phone: fullPhone,
-        company: '',
-        plan: '',
-        countryCode: countryCode,
-        fullPhone: fullPhone,
-        source: 'Chatbot - Quick Contact'
-    };
-    
-    // Submit to Google Sheets
-    fetch(GOOGLE_SHEETS_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(() => {
-        console.log('✅ Quick form submitted successfully');
-        alert('✅ Thank you! Our team will contact you shortly.');
-        
-        // Close form
-        const formDiv = document.getElementById('quick-contact-form');
-        if (formDiv) formDiv.style.display = 'none';
-        
-        // Clear form
-        document.getElementById('quickName').value = '';
-        document.getElementById('quickPhone').value = '';
-        document.getElementById('quickEmail').value = '';
-        
-        // Add bot message
-        if (typeof addBotMessage === 'function') {
-            addBotMessage("Thanks for your details! Our team will contact you shortly. How can I help you?");
+    /**
+     * Submit any form data object to Google Sheets.
+     * Uses no-cors mode because Apps Script redirects don't support CORS.
+     */
+    async function submitToGoogleSheets(formData) {
+        try {
+            await fetch(GOOGLE_SHEETS_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            return true;
+        } catch (err) {
+            console.error('Google Sheets submit error:', err);
+            return false;
         }
-    })
-    .catch(error => {
-        console.error('❌ Error:', error);
-        alert('✅ Form submitted! We will contact you soon.');
-        
-        const formDiv = document.getElementById('quick-contact-form');
-        if (formDiv) formDiv.style.display = 'none';
+    }
+
+    // ── MAIN LEAD FORM (CTA Section) ──────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // Main CTA lead form
+        const leadForm = document.getElementById('leadForm');
+        if (leadForm) {
+            leadForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const submitBtn = document.getElementById('submitLead');
+                const originalHTML = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                submitBtn.disabled = true;
+
+                const phone = document.getElementById('leadPhone').value.trim();
+                if (!/^\d{10}$/.test(phone)) {
+                    alert('Please enter a valid 10-digit mobile number');
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.disabled = false;
+                    return;
+                }
+
+                await submitToGoogleSheets({
+                    formType: 'Main Lead Form',
+                    name:     document.getElementById('leadName').value.trim(),
+                    email:    document.getElementById('leadEmail').value.trim(),
+                    phone:    phone,
+                    company:  document.getElementById('leadCompany').value.trim(),
+                    plan:     document.getElementById('leadPlan').value,
+                    fullPhone: '+91' + phone,
+                    source:   'CTA Section'
+                });
+
+                const successMsg = document.getElementById('successMessage');
+                if (successMsg) successMsg.style.display = 'block';
+                leadForm.reset();
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.disabled = false;
+                setTimeout(() => { if (successMsg) successMsg.style.display = 'none'; }, 5000);
+            });
+        }
+
+        // Newsletter form
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const submitBtn  = this.querySelector('button');
+                if (!emailInput || !emailInput.value) return;
+
+                const originalHTML = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                submitBtn.disabled = true;
+
+                await submitToGoogleSheets({
+                    formType: 'Newsletter',
+                    name:     'Newsletter Subscriber',
+                    email:    emailInput.value.trim(),
+                    phone: '', company: '', plan: '', fullPhone: '',
+                    source:   'Newsletter Signup'
+                });
+
+                const successDiv = this.parentElement.querySelector('.newsletter-success');
+                if (successDiv) {
+                    successDiv.style.display = 'block';
+                    setTimeout(() => { successDiv.style.display = 'none'; }, 3000);
+                }
+                emailInput.value = '';
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.disabled = false;
+            });
+        }
+
+        // Chatbot lead capture form
+        const leadCaptureForm = document.getElementById('leadCaptureForm');
+        if (leadCaptureForm) {
+            leadCaptureForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const phoneError = document.getElementById('phoneError');
+                const emailError = document.getElementById('emailError');
+                if (phoneError) phoneError.textContent = '';
+                if (emailError) emailError.textContent = '';
+
+                const phone = document.getElementById('chatbotPhone').value.trim();
+                const email = document.getElementById('chatbotEmail').value.trim();
+
+                if (!/^\d{10}$/.test(phone)) {
+                    if (phoneError) phoneError.textContent = 'Please enter a valid 10-digit mobile number';
+                    return;
+                }
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    if (emailError) emailError.textContent = 'Please enter a valid email address';
+                    return;
+                }
+
+                const countryCode = document.getElementById('chatbotCountryCode').value;
+                await submitToGoogleSheets({
+                    formType: 'Lead Capture (Chatbot)',
+                    name:     document.getElementById('chatbotName').value.trim(),
+                    email:    email,
+                    phone:    countryCode + phone,
+                    fullPhone: countryCode + phone,
+                    company: '', plan: '',
+                    source:   'Chatbot - Lead Form'
+                });
+
+                const formDiv = document.getElementById('chatbot-form');
+                if (formDiv) formDiv.style.display = 'none';
+                if (typeof window.addBotMessage === 'function') {
+                    window.addBotMessage('Thank you! Your 7-day free trial is activated. How can I help you with your freight needs?');
+                }
+                this.reset();
+            });
+        }
     });
-    
-    return false;
-};
 
-window.closeQuickForm = function() {
-    const form = document.getElementById('quick-contact-form');
-    if (form) form.style.display = 'none';
-};
+    // ── QUICK CONTACT FORM (Chatbot) ──────────────────────────────────────────
+    window.submitQuickForm = function () {
+        const name        = document.getElementById('quickName').value.trim();
+        const countryCode = document.getElementById('quickCountryCode').value;
+        const phone       = document.getElementById('quickPhone').value.trim();
+        const email       = document.getElementById('quickEmail').value.trim();
 
-window.closeMiniForm = function() {
-    const form = document.getElementById('mini-lead-form');
-    if (form) form.style.display = 'none';
-};
+        if (!name || !phone || !email) { alert('Please fill all fields'); return; }
+        if (!/^\d{10}$/.test(phone))   { alert('Please enter a valid 10-digit mobile number'); return; }
 
-console.log('✅ All chatbot forms ready!');
-</script>
+        submitToGoogleSheets({
+            formType: 'Quick Contact (Chatbot)',
+            name, email,
+            phone:    countryCode + phone,
+            fullPhone: countryCode + phone,
+            company: '', plan: '',
+            source:   'Chatbot - Quick Contact'
+        });
+
+        window.closeQuickForm();
+        if (typeof window.addBotMessage === 'function') {
+            window.addBotMessage("Thanks! Our team will contact you shortly. How can I help you today?");
+        }
+    };
+
+    // ── MINI LEAD FORM (Chatbot) ───────────────────────────────────────────────
+    window.submitMiniForm = function () {
+        const name        = document.getElementById('miniName').value.trim();
+        const countryCode = document.getElementById('miniCountryCode').value;
+        const phone       = document.getElementById('miniPhone').value.trim();
+        const email       = document.getElementById('miniEmail').value.trim();
+
+        if (!name || !phone || !email) { alert('Please fill all fields'); return; }
+        if (!/^\d{10}$/.test(phone))   { alert('Please enter a valid 10-digit mobile number'); return; }
+
+        submitToGoogleSheets({
+            formType: 'Mini Lead Form (Chatbot)',
+            name, email,
+            phone:    countryCode + phone,
+            fullPhone: countryCode + phone,
+            company: '', plan: '',
+            source:   'Chatbot - Mini Form'
+        });
+
+        window.closeMiniForm();
+        if (typeof window.addBotMessage === 'function') {
+            window.addBotMessage("Thanks for your details! You now have access to a 7-day free trial. How can I help you?");
+        }
+    };
+
+    // ── HELPERS ───────────────────────────────────────────────────────────────
+    window.addBotMessage = function (message) {
+        const container = document.getElementById('chatbot-messages');
+        if (!container) return;
+        const div = document.createElement('div');
+        div.className = 'message bot';
+        div.innerHTML = `<div class="message-avatar"><i class="fas fa-robot"></i></div><div class="message-bubble">${message}</div>`;
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+    };
+
+    window.closeQuickForm = function () {
+        const f = document.getElementById('quick-contact-form');
+        const m = document.getElementById('chatbot-messages');
+        if (f) f.style.display = 'none';
+        if (m) m.style.display = 'block';
+        localStorage.setItem('chatbot_visited', 'true');
+    };
+
+    window.closeMiniForm = function () {
+        const f = document.getElementById('mini-lead-form');
+        if (f) f.style.display = 'none';
+    };
+
+    window.skipQuickForm = function () {
+        window.closeQuickForm();
+        if (typeof window.addBotMessage === 'function') {
+            window.addBotMessage("No problem! How can I help you today?");
+        }
+    };
+    </script>
 
 </body>
-
 </html>
